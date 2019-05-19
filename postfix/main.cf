@@ -1,0 +1,28 @@
+compatibility_level = 2
+queue_directory = /var/spool/postfix
+command_directory = /usr/sbin
+daemon_directory = /usr/libexec/postfix
+data_directory = /var/lib/postfix
+mail_owner = postfix
+inet_interfaces = all
+unknown_local_recipient_reject_code = 550
+debug_peer_level = 2
+debugger_command =
+	 PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
+sendmail_path = /usr/sbin/sendmail
+newaliases_path = /usr/bin/newaliases
+mailq_path = /usr/bin/mailq
+setgid_group = postdrop
+inet_protocols = ipv4
+meta_directory = /etc/postfix
+shlib_directory = /usr/lib/postfix
+
+mynetworks = 127.0.0.0/8 
+relay_domains = texthash:/etc/postfix/relaydomain.map
+# relay_domains = zen.com.my, gmail.com
+smtpd_sender_restrictions = reject_non_fqdn_sender,
+ reject_unknown_sender_domain,
+ check_sender_access texthash:/etc/postfix/sender-whitelist.map,
+ reject
+smtpd_client_restrictions = permit_mynetworks 
+
