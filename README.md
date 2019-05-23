@@ -7,11 +7,12 @@ This docker image can be used in an environment where you need a simple relay pl
 
 ## Configuration 
 You would need to edit the following files:
-Filename | Description
+
+Filename   | Description
 -----------|---------------
- /app/config/relaydomain.map | Allowed recipient domains
- /app/config/sender-whitelist.map | Allowed sender domains
- 
+/app/config/relaydomain.map | Allowed recipient domains
+/app/config/sender-whitelist.map | Allowed sender domains
+
 ## Mount Points
  There is only one mount point, ``/app/config`` to ensure you have persistent location to keep your config.
 
