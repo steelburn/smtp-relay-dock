@@ -4,7 +4,7 @@ touch /run/openrc/softlevel
 touch /var/log/mail.log
 
 CONF_DIR="/etc/postfix"
-DCONF_DIR=/app/config"
+DCONF_DIR="/app/config"
 CONF_PARAM="-c ${CONF_DIR}"
 if [ ! -d ${CONF_DIR} ]; then
 	(>&2 echo "${CONF_DIR} does not exist")
