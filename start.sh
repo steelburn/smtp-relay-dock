@@ -30,7 +30,7 @@ postmap ${CONF_DIR}/sender-whitelist.map
 
 openrc
 sleep 1
-  rc-service rsyslog start 2> /dev/null
+  rc-service inetutils-syslogd start 2> /dev/null
   rc-service postfix start 2> /dev/null
 watch -n 60 'sh ./watch.sh' 1>/dev/null &
 tail -f /var/log/mail.log
