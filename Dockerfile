@@ -2,6 +2,8 @@ FROM alpine
 RUN apk update && \
     apk add --no-cache postfix postfix-pcre postfix-mysql inetutils-syslogd openrc
 RUN rc-update del syslog boot; rc-update add inetutils-syslogd boot
+RUN sed -i -e 's/need clock hostname/need clock/g' /etc/init.d/inetutils-syslogd
+
 COPY postfix/* /etc/postfix/
 COPY start.sh .
 COPY watch.sh .
